@@ -1,0 +1,8 @@
+{% load blog_tags %}
+<div class="list-group">
+        <a href="{% url 'index' %}" class="list-group-item list-group-item-action {% if 'Главная' in title %}bg-secondary text-light{% endif %}">Все статьи</a>
+    {% get_sorters as sorters %}
+    {% for key, value in sorters.items %}
+    <a href="?sort={{ key }}" class="list-group-item list-group-item-action {% if key in request %}bg-secondary text-light{% endif %}">{{ value }}</a>
+    {% endfor %}
+</div>

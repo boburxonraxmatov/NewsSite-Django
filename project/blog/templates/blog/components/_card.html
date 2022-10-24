@@ -1,0 +1,16 @@
+<div class="col">
+    <a href="{% url 'article_detail' article.pk %}" class="text-dark" style="text-decoration: none">
+        <div class="card h-100">
+            <img src="{{ article.get_photo }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">{{ article.category }}</p>
+                <h5 class="card-title">{{ article.title }}</h5>
+                <p class="card-text">{{ article.content|truncatechars:60 }}</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <p class="card-text">{{ article.created_at }}</p>
+                <p class="card-text">👀 {{ article.views }}</p>
+            </div>
+        </div>
+    </a>
+</div>
